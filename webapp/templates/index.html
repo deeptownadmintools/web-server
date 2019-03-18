@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!--fonts-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Allerta+Stencil">
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/styles/base.css">
+    <link rel="shortcut icon" type="icon/ico" href="static/favicon.ico">
+</head>
+
+<body>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark color-override">
+        <div class="container">
+            <a href="/">
+                <img src="static/img/logo_header.svg" alt="">
+            </a>
+            <button class="navbar-toggler button-color-override" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="static/img/toggle_icon.svg" alt="">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="/bot">Discord bot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="https://github.com/deeptownadmintools">Source</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="/guilds">Guilds</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!--body-->
+    <div class="container color-container bottom">
+        <div class="row">
+            <img class="main-logo" src="static/img/logo_main.svg" alt="logo" style="fill:#ff96b4">
+        </div>
+        <div class="row" style="padding-left: 25%;padding-right: 25%;">
+            <div class="col-md">
+                <input class="main-search-bar" type="text" placeholder="Guild name" autofocus="autofocus" id="mainSearchBar">
+            </div>
+        </div>
+        <div class="row justify-content-center" style="padding-top: 2%; ">
+            <button id="submitButton" onclick="setNameForSearch()">
+                Search
+            </button>
+        </div>
+    </div>
+
+
+
+    <script src="static/scripts/home.js"></script>
+
+</body>
+
+</html>

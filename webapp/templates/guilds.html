@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!--data tables-->
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+    <!--fonts-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Allerta+Stencil">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/styles/base.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="shortcut icon" type="icon/ico" href="static/favicon.ico">
+</head>
+
+<body>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--data tables-->
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark color-override">
+        <div class="container">
+            <a href="/">
+                <img src="static/img/logo_header.svg" alt="">
+            </a>
+            <button class="navbar-toggler button-color-override" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="static/img/toggle_icon.svg" alt="">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="/bot">Discord bot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="https://github.com/deeptownadmintools">Source</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="/guilds">Guilds</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!--body-->
+    <div class="container my-container color-container">
+        <div class="row justify-content-center" style="padding-top:6%; padding-bottom:4%;">
+            <div class="col">
+                <table id="guilds" class="display linkTable" style="width:100%">
+                </table>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <button id="updateButton" onclick="update()" style="display:none">
+                Update guild database
+            </button>
+        </div>
+    </div>
+
+
+
+
+    <script src="/static/scripts/guilds.js"></script>
+
+</body>
+
+</html>

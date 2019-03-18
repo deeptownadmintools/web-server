@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!--data tables-->
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+    <!--fonts-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Allerta+Stencil">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="static/styles/base.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="shortcut icon" type="icon/ico" href="static/favicon.ico">
+</head>
+
+<body>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--data tables-->
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.16/sorting/datetime-moment.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.19/dataRender/datetime.js"></script>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark color-override">
+        <div class="container">
+            <a href="/">
+                <img src="static/img/logo_header.svg" alt="">
+            </a>
+            <button class="navbar-toggler button-color-override" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="static/img/toggle_icon.svg" alt="">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="/bot">Discord bot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="https://github.com/deeptownadmintools">Source</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" href="/guilds">Guilds</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-override" id="donationsLink" href="/donations">Donations</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                    <a class="nav-link color-override" data-toggle="collapse" data-target="#donations">Donations</a>
+                </li> -->
+                </ul>
+            </div>
+    </nav>
+
+
+    <!-- <div id="donations" class="row collapse color-override">
+    <div class="col">
+        <a class="color-override" href="#">Donations between two dates</a>
+    </div>
+    <div class="col">
+        <a class="color-override" href="#">Donations between now and past date</a>
+    </div>
+    <div class="col">
+        <a class="color-override" href="#">Current total donations</a>
+    </div>
+    <div class="col">
+        <a class="color-override" href="#">Total donations in past</a>
+    </div>
+</div> -->
+
+
+    <!--body-->
+    <div class="container my-container color-container">
+        <div class="row justify-content-start">
+            <div class="col">
+                <div class="row justify-content-center">
+                    <h1 id="guildName" style="font-family:Stencil; text-align: center;">Deep and Dirty</h1>
+                </div>
+            </div>
+            <!-- <div class="col">
+            <div class="row justify-content-center">
+            </div>
+        </div> -->
+        </div>
+        <div class="row justify-content-center" style="padding-top:4%; padding-bottom:2%;">
+            <div class="col justify-content-center">
+                <div class="row justify-content-center">
+                    <ul class="toggleUl">
+                        <li class="toggleLi"> Toggle columns: </li>
+                        <li class="toggleLi"> <a class="columnToggler" data-column='1'>Name</a></li>
+                        <li class="toggleLi"> <a class="columnToggler" data-column='2'>Last online</a></li>
+                        <li class="toggleLi"> <a class="columnToggler" data-column='3'>Level</a></li>
+                        <li class="toggleLi"> <a class="columnToggler" data-column='4'>Depth</a></li>
+                        <li class="toggleLi"> <a class="columnToggler" data-column='5'>Mines</a></li>
+                        <li class="toggleLi"> <a class="columnToggler" data-column='6'>Chem. Mines</a></li>
+                        <li class="toggleLi"> <a class="columnToggler" data-column='7'>Oil</a></li>
+                        <li class="toggleLi"> <a class="columnToggler" data-column='8'>Crafters</a></li>
+                        <li class="toggleLi"> <a class="columnToggler" data-column='9'>Smelters</a></li>
+                        <li class="toggleLi"> <a class="columnToggler" data-column='10'>Last Event Donations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="padding-top:0%; padding-bottom:0%;">
+            <div class="col">
+                <table id="players" class="display" style="width:100%;">
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="/static/scripts/guild.js"></script>
+
+</body>
+
+</html>

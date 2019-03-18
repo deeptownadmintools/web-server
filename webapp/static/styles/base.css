@@ -1,0 +1,85 @@
+.my-navbar {
+  position: fixed;
+  width: 100%;
+  z-index: +100;
+}
+
+.color-override {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+
+}
+
+.color-override:link {
+  color: #ffffff !important;
+}
+
+.color-override:visited {
+  color: #ffffff !important;
+}
+
+.color-override:hover {
+  color: #bbbbbb !important;
+  cursor: pointer !important;
+  text-decoration: none;
+}
+
+.color-override:active {
+  color: #888888 !important;
+}
+
+.button-color-override {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+
+}
+
+.main-logo {
+  width: 100%;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 12%;
+  padding-bottom: 3%;
+}
+
+.main-search-bar {
+  border: #444444;
+  border-radius: 10px;
+  border-style: solid;
+  background-color: #dddddd;
+  width: 100%;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.main-search-bar:focus {
+  outline: #444444;
+}
+
+.linkTable tbody tr {
+  cursor: pointer;
+}
+
+.my-container {
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+.columnToggler {
+  cursor: pointer;
+  color: #0000ff !important;
+}
+
+.columnToggler:hover {
+  color: #8888ff !important;
+}
+
+.toggleLi {
+  padding-right: 4px;
+  float: left;
+}
+
+.toggleUl {
+  list-style-type: none;
+}
