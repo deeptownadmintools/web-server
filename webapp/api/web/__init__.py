@@ -1,13 +1,15 @@
-from webapp.api.web.others import bot
-from webapp.api.web.others import about
-from webapp.api.web.donations import donations
-from webapp.api.web.guilds import guild
-from webapp.api.web.guilds import guilds
-from webapp.api.web.home import home
 from flask import Blueprint
 
 
 webprint = Blueprint('web', __name__)
+
+
+from webapp.api.web.others import bot  # noqa E402
+from webapp.api.web.others import about  # noqa E402
+from webapp.api.web.donations import donations  # noqa E402
+from webapp.api.web.guilds import guild  # noqa E402
+from webapp.api.web.guilds import guilds  # noqa E402
+from webapp.api.web.home import home  # noqa E402
 
 
 __all__ = [
