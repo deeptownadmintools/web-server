@@ -11,15 +11,17 @@ function loadData(id) {
                 keys.push({
                     title: json['players']['keys'][i]
                 });
+
             }
-            for (var i in json['players']['data']) {
-                // json['players']['data'][i][2] = new Date(json['players']['data'][i][2]).toLocaleString();
-                json['players']['data'][i][2] = new Date(json['players']['data'][i][2]);
-            }
+            // for (var i in json['players']['data']) {
+            //     json['players']['data'][i][2] = moment(json['players']['data'][i][2]);
+            //     console.log(json['players']['data'][i][2])
+            // }
             $('#guildName').text(json['name']);
             document.getElementById('donationsLink').href = '/donations?id=' + json['id'];
 
-            // $.fn.dataTable.moment('D M YYYY HH:mm:ss');
+            // $.fn.dataTable.moment('ddd, DD MMM YYYY HH:mm:ss zz');
+            $.fn.dataTable.moment('ddd, DD MMM YYYY HH:mm:ss');
             table = $('#players').DataTable({
                 data: json['players']['data'],
                 columns: keys,
@@ -27,13 +29,23 @@ function loadData(id) {
                         "targets": [0],
                         "visible": false,
                         "searchable": false
-                    }, {
+                    },
+                    {
                         "targets": [2],
-                        "visible": false
+                        // "visible": false,
+                        // "render": function (data, type, row, meta) {
+                        //     var ThisDate = data.format('ddd, DD MMM YYYY HH:mm:ss');
+                        //     console.log(ThisDate);
+                        //     return ThisDate;
+                        // },
+                        "render": function (data, type, row, meta) {
+                            return data.substring(0, data.length - 4);
+                        },
                     },
                     {
                         "targets": [3, 4, 5, 6, 7, 8, 9, 10],
-                        "className": "dt-body-right"
+                        "className": "dt-body-right",
+                        "type": "num"
                     },
                     {
                         "targets": [1, 2],

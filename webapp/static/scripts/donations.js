@@ -16,15 +16,16 @@ function loadData(id) {
                 });
             }
             $('#guildName').text(json['name']);
-            var data = [];
-            for (var i in json['times']['data']) {
-                var d = new Date(json['times']['data'][i][1])
-                console.log(json['times']['data'][i][1])
-                data.push([json['times']['data'][i][0], d.toLocaleString()])
-            }
-            data.push([-1, "Dawn of time"]);
+            // var data = [];
+            // for (var i in json['times']['data']) {
+            //     var d = new Date(json['times']['data'][i][1])
+            //     console.log(json['times']['data'][i][1])
+            //     data.push([json['times']['data'][i][0], d.toLocaleString()]);
+            // }
+            json['times']['data'].push([2147483647, "Dawn of time"]);
+            json['times']['data'].push([-1, "Dawn of time"]);
             l1Table = $('#list1').DataTable({
-                data: data,
+                data: json['times']['data'],
                 columns: keys,
                 "select": {
                     "style": "single",
@@ -32,12 +33,12 @@ function loadData(id) {
                 },
                 "columnDefs": [{
                         "targets": [0],
-                        // "visible": false,
+                        "visible": false,
                         "searchable": false
                     },
                     {
                         "targets": [1],
-                        "className": "dt-body-center"
+                        "className": "dt-center"
                     },
                     {
                         'orderData': [0],
@@ -50,10 +51,10 @@ function loadData(id) {
                     ]
                 ]
             });
-            data[data.length - 1][1] = 'Now';
-            data[data.length - 1][0] = 2147483647;
+            json['times']['data'][json['times']['data'].length - 1][1] = 'Now';
+            json['times']['data'][json['times']['data'].length - 2][1] = 'Now';
             l2Table = $('#list2').DataTable({
-                data: data,
+                data: json['times']['data'],
                 columns: keys,
                 "select": {
                     "style": "single",
@@ -61,12 +62,12 @@ function loadData(id) {
                 },
                 "columnDefs": [{
                         "targets": [0],
-                        // "visible": false,
+                        "visible": false,
                         "searchable": false
                     },
                     {
                         "targets": [1],
-                        "className": "dt-body-center"
+                        "className": "dt-center"
                     },
                     {
                         'orderData': [0],
@@ -114,11 +115,12 @@ function displayCount(json) {
         columns: keys,
         "columnDefs": [{
                 "targets": [1, 2],
-                "className": "dt-body-right"
+                "className": "dt-right",
+                "type": "num"
             },
             {
                 "targets": [0],
-                "className": "dt-body-left"
+                "className": "dt-left"
             }
         ],
         "order": [
