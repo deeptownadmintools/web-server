@@ -1,0 +1,2 @@
+graft webapp/static
+graft webapp/templates

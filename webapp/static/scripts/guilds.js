@@ -38,6 +38,7 @@ function loadTable(name) {
                 ],
                 scrollX: true
             });
+            document.getElementById('updateButton').style.display = 'block';
             console.log(json);
         });
 }
@@ -48,7 +49,6 @@ $(document).ready(function () {
     var name = urlParams.get('find')
     if (typeof name == "string" && name != '') {
         name = '/' + name;
-        document.getElementById('updateButton').style.display = 'block';
     } else {
         name = '';
     }
