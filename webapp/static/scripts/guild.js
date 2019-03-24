@@ -32,7 +32,7 @@ function loadData(id) {
                     },
                     {
                         "targets": [2],
-                        // "visible": false,
+                        "visible": false,
                         // "render": function (data, type, row, meta) {
                         //     var ThisDate = data.format('ddd, DD MMM YYYY HH:mm:ss');
                         //     console.log(ThisDate);
@@ -43,7 +43,7 @@ function loadData(id) {
                         },
                     },
                     {
-                        "targets": [3, 4, 5, 6, 7, 8, 9, 10],
+                        "targets": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
                         "className": "dt-body-right",
                         "type": "num"
                     },
