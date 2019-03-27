@@ -43,8 +43,9 @@
             <a href="/">
                 <img src="static/img/logo_header.svg" alt="">
             </a>
-            <button class="navbar-toggler button-color-override" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler button-color-override" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <img src="static/img/toggle_icon.svg" alt="">
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -64,6 +65,13 @@
                     <li class="nav-item">
                         <a class="nav-link color-override" href="/guilds">Guilds</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link color-override dropdown-toggle" role="button" id="dropdownFav"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Favourite</a>
+                        <div id="fav" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -77,13 +85,20 @@
         <div class="row">
             <div class="col" style="padding-left:15%;padding-right:15%;">
                 <p>
-                    Due to financial limitations this bot can not be made public. You can access it on Deep Town discord admin server.
-                    If you would like to use this bot on your private server it can be arranged, so feel free to contact me on the email or on discord.
+                    Due to financial limitations this bot can not be made public. You can access it on Deep Town discord
+                    admin server.
+                    If you would like to use this bot on your private server it can be arranged, so feel free to contact
+                    me on the email or on discord.
                 </p>
             </div>
         </div>
     </div>
 
+    <script src="/static/scripts/base.js">
+        $(document).ready(function () {
+            loadFavourites();
+        });
+    </script>
 
 
 </body>

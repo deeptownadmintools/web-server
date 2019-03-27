@@ -51,10 +51,6 @@ function loadData(id) {
                         "targets": [1, 2],
                         "className": "dt-body-left"
                     },
-                    // {
-                    //     targets: 2,
-                    //     render: $.fn.dataTable.render.moment()
-                    // }
                 ],
                 "order": [
                     [
@@ -72,6 +68,35 @@ function loadData(id) {
                 // Toggle the visibility
                 column.visible(!column.visible());
             });
+
+            var last = JSON.parse(localStorage.getItem('lastVisited') || null);
+            console.log(last);
+            console.log(typeof(last));
+            if (last==null) {
+                last = []
+            }
+            console.log(last);
+            var found = false;
+            for (var i in last) {
+                if (last[i][0] == id) {
+                    last[i][2] = Date.now();
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                if (last.length < 8) {
+                    last.push([id, json['name'], Date.now()]);
+                } else {
+                    last[7] = [id, json['name'], Date.now()];
+                }
+            }
+            last.sort(function(a, b) {
+                return b[2] - a[2];
+            })
+            console.log(last);
+            localStorage.setItem('lastVisited', JSON.stringify(last));
+
             console.log(json);
         });
 }
@@ -83,5 +108,6 @@ $(document).ready(function () {
     if (id == 'undefined') {
         alert('Undefined parameter "id"')
     }
+    loadFavourites();
     loadData(id);
 });

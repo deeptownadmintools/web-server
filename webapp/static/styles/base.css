@@ -83,3 +83,7 @@
 .toggleUl {
   list-style-type: none;
 }
+
+.favLi {
+  float: left;
+}

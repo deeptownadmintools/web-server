@@ -42,8 +42,9 @@
             <a href="/">
                 <img src="static/img/logo_header.svg" alt="">
             </a>
-            <button class="navbar-toggler button-color-override" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler button-color-override" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <img src="static/img/toggle_icon.svg" alt="">
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -66,9 +67,18 @@
                     <li class="nav-item">
                         <a class="nav-link color-override" id="donationsLink" href="/donations">Donations</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link color-override dropdown-toggle" role="button" id="dropdownFav"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Favourite</a>
+                        <div id="fav" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                        </div>
+                    </li>
                 </ul>
             </div>
     </nav>
+
+
 
 
     <!--body-->
@@ -85,19 +95,45 @@
                 <div class="row justify-content-center">
                     <ul class="toggleUl justify-content-center">
                         <li class="toggleLi"> Toggle columns: </li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='1'>Name</a>></li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='2'>Last Online</a>></li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='3'>Level</a>></li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='4'>Depth</a>></li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='5'>Mines</a>></li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='6'>Chem. Mines</a>></li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='7'>Oil</a>></li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='8'>Crafters</a>></li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='9'>Smelters</a>></li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='10'>Jewel</a>></li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='11'>Chem. Station</a>></li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='12'>Green House</a>></li>
-                        <li class="toggleLi"><<a class="columnToggler" data-column='13'>Last Event Donations</a>></li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='1'>Name</a>>
+                        </li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='2'>Last Online</a>>
+                        </li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='3'>Level</a>>
+                        </li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='4'>Depth</a>>
+                        </li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='5'>Mines</a>>
+                        </li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='6'>Chem. Mines</a>>
+                        </li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='7'>Oil</a>>
+                        </li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='8'>Crafters</a>>
+                        </li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='9'>Smelters</a>>
+                        </li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='10'>Jewel</a>>
+                        </li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='11'>Chem. Station</a>>
+                        </li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='12'>Green House</a>>
+                        </li>
+                        <li class="toggleLi">
+                            <<a class="columnToggler" data-column='13'>Last Event Donations</a>>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -113,6 +149,7 @@
 
 
 
+    <script src="/static/scripts/base.js"></script>
     <script src="/static/scripts/guild.js"></script>
 
 </body>

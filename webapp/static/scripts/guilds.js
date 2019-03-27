@@ -38,8 +38,11 @@ function loadTable(name) {
                 ],
                 scrollX: true
             });
+            var urlParams = new URLSearchParams(window.location.search);
             var n = urlParams.get('find')
-            if (typeof n == "string" && n != '') {}
+            if (typeof n == "string" && n != '') {
+                document.getElementById('updateButton').style.display = 'block';
+            }
 
             console.log(json);
         });
@@ -51,10 +54,10 @@ $(document).ready(function () {
     var name = urlParams.get('find')
     if (typeof name == "string" && name != '') {
         name = '/' + name;
-        document.getElementById('updateButton').style.display = 'block';
     } else {
         name = '';
     }
+    loadFavourites();
     loadTable(name);
 });
 
@@ -69,7 +72,10 @@ function update() {
         .then(function (json) {
             if (json['result'] === "ok") {
                 location.reload()
-                alert("Guild database was updated for guilds named: " + name + ". \n\n If your guild is not listed below, please go to the main page and try a search with the whole guild name, as it is written in game.")
+                alert("Guild database was updated for guilds named: " +
+                    name + ". \n\n If your guild is not listed below," +
+                    " please go to the main page and try a search with" +
+                    " the whole guild name, as it is written in game.")
             }
             console.log(json);
         });

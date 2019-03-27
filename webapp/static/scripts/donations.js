@@ -91,8 +91,9 @@ $(document).ready(function () {
     var id = urlParams.get('id')
     if (id == 'undefined') {
         // window.location.href = '/400';
-        alert('undefined')
+        alert('Undefined parameter "id"')
     }
+    loadFavourites();
     loadData(id);
 });
 
