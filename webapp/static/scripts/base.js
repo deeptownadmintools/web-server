@@ -3,6 +3,7 @@ function loadFavourites() {
     var last = JSON.parse(localStorage.getItem('lastVisited') || null);
     console.log(last);
     if (last == null) {
+        document.getElementById('dropdownFav').style.display = 'none';
         return;
     }
     for (var i in last) {
