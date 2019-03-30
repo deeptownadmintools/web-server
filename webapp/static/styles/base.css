@@ -28,6 +28,30 @@
   color: #888888 !important;
 }
 
+.secondary-color-override {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+
+}
+
+.secondary-color-override:link {
+  color: #ffffff !important;
+}
+
+.secondary-color-override:visited {
+  color: #ffffff !important;
+}
+
+.secondary-color-override:hover {
+  color: #bbbbbb !important;
+  cursor: pointer !important;
+  text-decoration: none;
+}
+
+.secondary-color-override:active {
+  color: #888888 !important;
+}
+
 .button-color-override {
   background-color: #000000 !important;
   color: #ffffff !important;

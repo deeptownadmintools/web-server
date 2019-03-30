@@ -28,7 +28,7 @@ function loadTable(name) {
                     },
                     {
                         "targets": -1,
-                        "className": "dt-body-right"
+                        "className": "dt-right"
                     }
                 ],
                 "order": [

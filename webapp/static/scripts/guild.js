@@ -44,12 +44,12 @@ function loadData(id) {
                     },
                     {
                         "targets": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
-                        "className": "dt-body-right",
+                        "className": "dt-right",
                         "type": "num"
                     },
                     {
                         "targets": [1, 2],
-                        "className": "dt-body-left"
+                        "className": "dt-left"
                     },
                 ],
                 "order": [
@@ -71,8 +71,8 @@ function loadData(id) {
 
             var last = JSON.parse(localStorage.getItem('lastVisited') || null);
             console.log(last);
-            console.log(typeof(last));
-            if (last==null) {
+            console.log(typeof (last));
+            if (last == null) {
                 last = []
             }
             console.log(last);
@@ -91,11 +91,12 @@ function loadData(id) {
                     last[7] = [id, json['name'], Date.now()];
                 }
             }
-            last.sort(function(a, b) {
+            last.sort(function (a, b) {
                 return b[2] - a[2];
             })
             console.log(last);
             localStorage.setItem('lastVisited', JSON.stringify(last));
+            localStorage.setItem('data', JSON.stringify(json));
 
             console.log(json);
         });
@@ -111,3 +112,30 @@ $(document).ready(function () {
     loadFavourites();
     loadData(id);
 });
+
+
+function toCsv() {
+    var data = JSON.parse(localStorage.getItem('data') || null);
+    if (data == null) {
+        return;
+    }
+
+    var csv = 'data:text/csv;charset=utf-8,"';
+    csv += 'name","' + data['name'] + '"\r\n"';
+    csv += 'level","' + data['level'] + '"\r\n"';
+    csv += '"\r\n"';
+    csv += data['players']['keys'].join('","') + '"\r\n"';
+    data['players']['data'].forEach(function (arr) {
+        csv += arr.join('","') + '"\r\n"';
+    });
+    csv += '"'
+    
+    var name = data['name'].split(' ').join('_');
+    name += '_' + Date.now() + '.csv';
+
+    var link = document.createElement("a");
+    link.setAttribute("href", encodeURI(csv));
+    link.setAttribute("download", name);
+    document.body.appendChild(link);
+    link.click();
+}

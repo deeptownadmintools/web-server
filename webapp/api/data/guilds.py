@@ -11,9 +11,9 @@ def guilds(name):
     if (r.status_code != 200):
         raise DTATException(r.status_code, r.content)
     return r.content
+    
 
-
-@dataprint.route('/guilds/update/<string:name>', methods=['GET'])
+@dataprint.route('/guilds/update/<string:name>', methods=['GET, PATCH'])
 def guildsUpdate(name):
     r = requests.get(app.config['DTAT_HOST_URL'] + '/update/name/' + name)
     if (r.status_code != 200):

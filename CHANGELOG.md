@@ -2,6 +2,11 @@
 
 ## Beta
 
+## v0.3.5
+### Added
+ - secondary navbar for donations
+ - export to csv for guild data
+
 ## v0.3.4
 ### Added
  - DTAT bot is now public and can be invited using this website
