@@ -52,6 +52,11 @@
   color: #888888 !important;
 }
 
+a.secondary-color-override {
+  padding-right: .5rem !important;
+  padding-left: .5rem !important;
+}
+
 .button-color-override {
   background-color: #000000 !important;
   color: #ffffff !important;
