@@ -206,14 +206,14 @@ function count() {
     let id2 = l2Table.rows(selected2[0]).data()[0][0];
     console.log(id1);
     console.log(id2);
-    if (id1 === 2147483647) {
-        if (id2 === 2147483647) {
+    if (id1 == 2147483647 || id1 == -1) {
+        if (id2 == 2147483647 || id2 == -1) {
             donc();
         } else {
             dons(id2);
         }
     } else {
-        if (id2 === 2147483647) {
+        if (id2 == 2147483647 || id2 == -1) {
             don(id1);
         } else {
             dond(id1, id2);
