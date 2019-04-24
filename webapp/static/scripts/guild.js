@@ -1,7 +1,7 @@
 var table;
 
 function loadData(id) {
-    fetch('/data/guild/' + id)
+    fetch('/data/guild/id/' + id + '/data')
         .then(function (response) {
             return response.json();
         })

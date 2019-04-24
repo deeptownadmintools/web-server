@@ -1,5 +1,5 @@
 function loadTable(name) {
-    fetch('/data/guilds' + name)
+    fetch('/data/guild/name' + name)
         .then(function (response) {
             return response.json();
         })
@@ -64,7 +64,7 @@ $(document).ready(function () {
 function update() {
     var urlParams = new URLSearchParams(window.location.search);
     var name = urlParams.get('find')
-    fetch('/data/guilds/update/' + name)
+    fetch('/data/update/name/' + name)
         .then(function (response) {
             var result = response.json();
             return result;

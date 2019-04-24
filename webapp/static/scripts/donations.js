@@ -4,7 +4,7 @@ var tableBuilt = false;
 var countTable;
 
 function loadData(id) {
-    fetch('/data/times/' + id)
+    fetch('/data/guild/id/' + id +'/times')
         .then(function (response) {
             return response.json();
         })
@@ -140,7 +140,7 @@ function don(timeId) {
         alert('Undefined parameter "id"')
         return;
     }
-    fetch('/data/don/' + guildId + '/' + timeId)
+    fetch('/data/donations/difference/guild/id/' + guildId + '/time/id/' + timeId)
         .then(function (response) {
             return response.json();
         })
@@ -157,7 +157,7 @@ function donc() {
         alert('Undefined parameter "id"')
         return;
     }
-    fetch('/data/donc/' + guildId)
+    fetch('/data/donations/current/guild/id/' + guildId)
         .then(function (response) {
             return response.json();
         })
@@ -169,7 +169,7 @@ function donc() {
 }
 
 function dond(timeId1, timeId2) {
-    fetch('/data/dond/' + timeId1 + '/' + timeId2)
+    fetch('/data/donations/difference/time/id/' + timeId1 + '/time/id/' + timeId2)
         .then(function (response) {
             return response.json();
         })
@@ -180,7 +180,7 @@ function dond(timeId1, timeId2) {
 }
 
 function dons(timeId) {
-    fetch('/data/dons/' + timeId)
+    fetch('/data/donations/specified/time/id/' + timeId)
         .then(function (response) {
             return response.json();
         })
