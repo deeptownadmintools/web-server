@@ -16,8 +16,8 @@ def guilds(name):
     return r.content
 
 
-@dataprint.route('/guilds/update/<string:name>', methods=['GET, PATCH'])
-@dataprint.route('/update/name/<string:name>', methods=['GET, PATCH'])
+@dataprint.route('/guilds/update/<string:name>', methods=['GET', 'PATCH'])
+@dataprint.route('/update/name/<string:name>', methods=['GET', 'PATCH'])
 def guildsUpdate(name):
     r = requests.get(app.config['DTAT_HOST_URL'] + '/data' +
                      '/update/name/' + name)
