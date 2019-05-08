@@ -25,7 +25,8 @@ def donc(id):
 
 
 @dataprint.route('/don/<int:id1>/<int:id2>', methods=['GET'])
-@dataprint.route('/donations/difference/guild/id/<int:id1>/time/id/<int:id2>', methods=['GET'])
+@dataprint.route('/donations/difference/guild/id/<int:id1>/time/id/<int:id2>',
+                 methods=['GET'])
 def don(id1, id2):
     r = requests.get(app.config['DTAT_HOST_URL'] + '/data' +
                      '/donations/difference/guild/id/' +
@@ -36,7 +37,8 @@ def don(id1, id2):
 
 
 @dataprint.route('/dond/<int:id1>/<int:id2>', methods=['GET'])
-@dataprint.route('/donations/difference/time/id/<int:id1>/time/id/<int:id2>', methods=['GET'])
+@dataprint.route('/donations/difference/time/id/<int:id1>/time/id/<int:id2>',
+                 methods=['GET'])
 def dond(id1, id2):
     r = requests.get(app.config['DTAT_HOST_URL'] + '/data' +
                      '/donations/difference/time/id/' + str(id1) +
