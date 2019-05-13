@@ -2,6 +2,10 @@
 
 ## Beta
 
+## v0.4.0
+### Changed
+ - API routes
+
 ## v0.3.5
 ### Added
  - secondary navbar for donations
