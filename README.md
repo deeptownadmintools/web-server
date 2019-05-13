@@ -2,6 +2,9 @@
 
 [![Build Status](https://www.travis-ci.org/deeptownadmintools/web-server.svg?branch=master)](https://www.travis-ci.org/deeptownadmintools/web-server)
 
+#### Website: [dtat.hampl.space](http://dtat.hampl.space)
+#### Bot: [invite](https://discordapp.com/oauth2/authorize?client_id=557340294971129856&permissions=2048&scope=bot)
+#### API: [Postman](https://documenter.getpostman.com/view/5414817/S1LsXq6g)
 
 ## Running the server
 1) To run this server, you will need access to a running [main server](https://github.com/deeptownadmintools/main-server), or this web server already connected to the already mentioned main server. Thus, you can either host your own main server, or connect to the one already running at [dtat.hampl.space](http://dtat.hampl.space/).
